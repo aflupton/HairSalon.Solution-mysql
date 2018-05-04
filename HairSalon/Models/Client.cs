@@ -14,8 +14,6 @@ namespace HairSalonApp.Models
     private string _clNextAppointmentDate;
 
 
-    private static List<Client> cl = new List<Client> {};
-
     public Client(string stylistName, int clId, string clName, int clPrice, string clStyle, string clNextAppointmentDate)
     {
       _stylistName = stylistName;
@@ -56,14 +54,76 @@ namespace HairSalonApp.Models
       return _clNextAppointmentDate;
     }
 
-    // public void Save()
-    // {
-    //   //code here
-    // }
-    //
-    // public static List<Client> GetAll()
-    // {
-    //   //code here
-    // }
+    public void AddClientToList()
+    {
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      var cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"INSERT INTO 'clients' ('stylistName', 'clId', 'clName', 'stylistPrice', 'clStyle', 'clNextAppointmentDate') VALUES (@ItemStylistName, @ItemClId, @ItemClName, @ItemStylistPrice, @ItemClStyle, @ItemClNextAppointmentDate)";
+
+      MySqlParameter stylistName = new MySqlParameter();
+      stylistName.ParameterName = "@ItemStylistName";
+      stylistName.Value = this._stylistName;
+      cmd.Parameters.Add(this);
+
+      MySqlParameter clId = new MySqlParameter();
+      clId.ParameterName = "@ItemClId";
+      clId.Value = this._ClId;
+      cmd.Parameters.Add(this);
+
+      MySqlParameter clName = new MySqlParameter();
+      clName.ParameterName = "@ItemClName";
+      clName.Value = this._clName;
+      cmd.Parameters.Add(this);
+
+      MySqlParameter stylistPrice = new MySqlParameter();
+      stylistPrice.ParameterName = "@ItemStylistPrice";
+      stylistPrice.Value = this._stylistPrice;
+      cmd.Parameters.Add(this);
+
+      MySqlParameter clStyle = new MySqlParameter();
+      clStyle.ParameterName = "@ItemClStyle";
+      clStyle.Value = this._clStyle;
+      cmd.Parameters.Add(this);
+
+      MySqlParameter clNextAppointmentDate = new MySqlParameter();
+      clNextAppointmentDate.ParameterName = "@ItemClNextAppointmentDate";
+      clNextAppointmentDate.Value = this._clNextAppointmentDate;
+      cmd.Parameters.Add(this);
+
+      cmd.ExecuteQuery();
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+    }
+
+    public static List<Client> GetAllClients()
+    {
+      List<Client> allClients = new List<Client> {};
+      MySqlConnection conn = DB.Connection();
+      conn.Open();
+      MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
+      cmd.CommandText = @"SELECT * FROM clients";
+      MySqlDataReader rdr = cmd.ExecuteReader() as MySqlDataReader;
+      while(rdr.Read())
+      {
+        string stylistName = rdr.GetString(1);
+        int clId = rdr.GetInt32(2);
+        string clName = rdr.GetString(3);
+        int clPrice = rdr.GetInt32(4);
+        string clStyle = rdr.GetString(5);
+        string clNextAppointmentDate = rdr.GetString(6);
+        Client newClient = new Client(stylistName, clId, clName, clPrice, clStyle, clNextAppointmentDate);
+        allClients.Add(newClient);
+      }
+      conn.Close();
+      if(conn != null)
+      {
+        conn.Dispose();
+      }
+      return allClients;
+    }
   }
 }

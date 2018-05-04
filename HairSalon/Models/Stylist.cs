@@ -11,7 +11,6 @@ namespace HairStylistApp.Models
     private string _hireDate;
     private int _numberOfClients;
 
-    private static List<Stylist> _stylists = new List<Stylist> {};
 
     public Stylist(string stylistName, int stylistId, string hireDate, int numberOfClients)
     {
