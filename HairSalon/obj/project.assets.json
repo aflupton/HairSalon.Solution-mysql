@@ -9656,16 +9656,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/HairSalon.csproj",
-      "projectName": "HairSalon",
-      "projectPath": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/HairSalon.csproj",
+      "projectUniqueName": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/HairSalonApp.csproj",
+      "projectName": "HairSalonApp",
+      "projectPath": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/HairSalonApp.csproj",
       "outputPath": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/obj/",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/HairSalon.dll": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/bin/placeholder/netcoreapp1.1/HairSalon.dll"
+        "lib/netcoreapp1.1/HairSalonApp.dll": "/Users/Guest/Desktop/HairSalon.Solution/HairSalon/bin/placeholder/netcoreapp1.1/HairSalonApp.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {

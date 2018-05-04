@@ -1,4 +1,4 @@
-# Hair Salon App_
+# _Hair Salon App_
 
 #### _Hair Salon App, 5/4/18_
 
