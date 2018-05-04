@@ -33,9 +33,16 @@ _An app for a hair salon, where the owner/user is able to create a list of styli
 * _Open MAMP, and click 'start servers'._
 * _Open the web application through MAMP._
 
+## Sql Setup
+
+* _CREATE DATABASE firstname_lastname and firstname_lastname_test_
+* _USE firstname_lastname_
+* _CREATE TABLE stylists_
+* _CREATE TABLE clients_
+
 ## Known Bugs
 
-_Currently the app doesn't have a front end._
+_The app is currently not building._
 
 ## Support and contact details
 
@@ -43,7 +50,7 @@ _If you have any questions, email me at aflupton@gmail.com_
 
 ## Technologies Used
 
-_C#/.NET, HTML, CSS/Bootstrap_
+_C#/MVC, mySql, HTML, CSS/Bootstrap_
 
 ### License
 
