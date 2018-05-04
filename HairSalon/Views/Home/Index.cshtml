@@ -5,29 +5,28 @@
 <div class="container">
   <h3>List of currently employed stylists</h3>
     <div class="row">
-      <div class="preface col-md-6">
-        <p>Enter values into the form to input a new stylist into the system.</p>
-        <p>Click on an existing stylist's name to see a list of their clients, or to add a new client.</p>
-      </div>
-      <!-- end of col -->
-      <!-- end of preface -->
       <div class="col-md-6">
-        <form class="form-group" action="/Index" method="post">
-          <label for="name">Name:</label>
-          <input type="text" name="name">
-          <label for="hireDate">Date hired:</label>
-          <input type="text" name="hireDate">
-          <label for="clients">Number of Clients:</label>
-          <button type="submit" name="button">Submit</button>
-        </form>
-
-        <!-- refresh the form/page -->
-        <form class="form-group" action="/" method="get">
-          <button type="submit" name="button">Refresh the page</button>
+        <p>Click the link to go to a list of stylists.</p>
+      </div>
+      <div class="col-md-6">
+        <form class="form-group" action="/Stylists/SeeStylists" method="get">
+          <button type="submit" name="button">See all stylists</button>
         </form>
       </div>
       <!-- end of col -->
     </div>
     <!-- end of row -->
-
+    <div class="row">
+      <div class="col-md-6">
+        <!-- refresh the form/page -->
+        <form class="form-group" action="/" method="get">
+          <button type="submit" name="button">Refresh the page</button>
+        </form>
+        <form class="form-group" action="/Stylists/AddStylist" method="get">
+          <button type="submit" name="button">Enter a new stylist</button>
+        </form>
+      </div>
+      <!-- end of col -->
+    </div>
+    <!-- end of row -->
 </div>

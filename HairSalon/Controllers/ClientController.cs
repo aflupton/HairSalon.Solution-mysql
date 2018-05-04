@@ -17,7 +17,6 @@ namespace HairSalonApp.Controllers
     public ActionResult AddClient()
     {
       string stylistName = Request.Form["name"];
-      int clId = int.Parse(Request.Form["clientId"]);
       string clName = Request.Form["clName"];
       int clPrice = int.Parse(Request.Form["clPrice"]);
       string clStyle = Request.Form["clStyle"];
